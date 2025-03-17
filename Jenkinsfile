@@ -4,8 +4,7 @@ pipeline {
 	stage('Checkout') {
             steps {
                 // Récupère le code depuis le dépôt GitHub
-                git
-'https://github.com/23043esp/TP2_jenkins.git'
+                git branch:'master',url:'https://github.com/23043esp/TP2_jenkins.git'
             }
         }
         stage('Compile') {
@@ -21,7 +20,6 @@ pipeline {
             steps {
                 script {
                     // Exécute le code Java compilé
-
                     sh 'java HelloWorld'
 
                 }
